@@ -46,7 +46,7 @@ export default function Header() {
             Log in
           </button>
           <button
-            className="border border-gray-800 text-gray-800  hover:bg-gray-200 rounded-full px-6 py-2 transition-colors"
+            className="border border-gray-800 text-gray-800  hover:bg-gray-200 rounded-full px-6 py-2 transition-colors font-bold"
             onClick={() => router.push("/signup")}
           >
             Sign up

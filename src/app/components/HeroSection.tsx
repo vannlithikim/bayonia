@@ -13,7 +13,7 @@ function HeroSection() {
       />
       
       {/* Booking Box Overlay */}
-      <div className="absolute -bottom-9 left-1/2 transform -translate-x-1/2 bg-white rounded-4xl shadow-lg py-3 px-7 w-[50%] ">
+      <div className="absolute -bottom-9 left-1/2 transform -translate-x-1/2 bg-white rounded-4xl shadow-xl py-3 px-7 w-[50%] ">
         <div className="flex flex-col md:flex-row items-center gap-5">
           {/* Where */}
           <div className="flex-1 ">
