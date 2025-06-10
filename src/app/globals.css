@@ -28,7 +28,7 @@
 
 
 
-:root {
-    --primary-color: #229AE5;
-    --secondary-color: #50E3C2;
-  }
+@theme {
+  --color-primary: #229AE5;
+  --color-secondary: #50E3C2;
+}
