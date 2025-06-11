@@ -1,6 +1,6 @@
 import React from 'react'
-import HeroSection from '@/components/HeroSection'
-import ExploreSection from '@/components/ExploreSection'
+import HeroSection from '../components/HeroSection'
+import ExploreSection from '../components/ExploreSection'
 
 function page() {
   return (

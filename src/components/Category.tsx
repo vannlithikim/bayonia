@@ -20,11 +20,11 @@ function Category() {
   return (
     <div className="flex items-center justify-between ">
       {categories.map((category, index) => (
-        <div key={index} className="flex flex-col items-center mx-4">
+        <div key={index} className="flex flex-col items-center ">
           <Image
             src={category.icon}
             alt={category.name}
-            width={44}
+            width={40}
             height={40} // Adjusted height to match width for better proportion
             className="mb-2"
           />
