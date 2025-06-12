@@ -29,11 +29,11 @@ function ExploreSection() {
         ))}
       </div>
 
-      <div className="text-center mt-6">
+      <div className="flex flex-col text-center justify-center items-center mt-6 gap-1">
+        <p className="text-lg font-bold">Continue Exploring</p>
           <button
             type="button" 
-            className="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600"
-           
+            className="bg-black w-[8%] text-white font-semibold text-sm p-2 rounded-md hover:bg-blue-600"
           >
             See More
           </button>
