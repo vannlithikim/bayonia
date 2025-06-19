@@ -2,6 +2,7 @@ import React from 'react'
 import HeroSection from '../components/HeroSection'
 import ExploreSection from '../components/ExploreSection'
 import TrendingNow from '../components/Trending'
+import Events from '../components/Events'
 
 function page() {
   return (
@@ -9,7 +10,7 @@ function page() {
       <HeroSection />
       <ExploreSection />
       <TrendingNow />
-      {/* Add more sections as needed */}
+      <Events />
     </div>
   )
 }
