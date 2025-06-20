@@ -3,6 +3,7 @@ import HeroSection from '../components/HeroSection'
 import ExploreSection from '../components/ExploreSection'
 import TrendingNow from '../components/Trending'
 import Events from '../components/Events'
+import TravelGuideBanner from '../components/Tips'
 
 function page() {
   return (
@@ -11,6 +12,7 @@ function page() {
       <ExploreSection />
       <TrendingNow />
       <Events />
+      <TravelGuideBanner />
     </div>
   )
 }

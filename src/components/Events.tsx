@@ -4,7 +4,7 @@ import Image from 'next/image'
 function Events() {
   return (
     <div className="px-32 my-16">
-      <h2 className="text-3xl font-bold mb-6 text-black">Special Offers</h2>
+      <h2 className="text-2xl font-bold mb-10 text-black">Special Offers</h2>
       
       <div className="flex flex-row gap-10 overflow-x-auto">
         <div className="flex-shrink-0">
