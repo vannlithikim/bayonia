@@ -3,7 +3,7 @@ import Image from 'next/image';
 
 const TravelGuideBanner = () => {
   return (
-    <div className="w-full max-w-6xl px-32 py-4">
+    <div className="w-full max-w-6xl px-32 py-10 mb-20">
       {/* Header */}
       <div className="mb-10">
         <h1 className="text-2xl font-bold text-gray-900">Travel Guides & Tips</h1>

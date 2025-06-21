@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Header from "../components/NavBar";
 import "./globals.css";
+import Footer from '../components/Footer';
 
 export const metadata: Metadata = {
   title: 'Bayonia - Hotel Booking',
@@ -17,6 +18,7 @@ export default function RootLayout({
       <body>
         <Header />
         <div className="pt-[110px]">{children}</div>
+        <Footer />
       </body>
     </html>
   );
