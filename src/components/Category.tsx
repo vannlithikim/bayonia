@@ -1,7 +1,8 @@
-import React from 'react';
-import Image from 'next/image';
-import { Filter } from 'lucide-react';
+"use client";
 
+import React, { useRef } from 'react';
+import Image from 'next/image';
+import { ChevronLeft, ChevronRight, Filter } from 'lucide-react';
 
 function Category() {
   const categories = [
@@ -12,31 +13,59 @@ function Category() {
     { name: 'Sea', icon: '/icons/Sunrise.png' },
     { name: 'River', icon: '/icons/Jungle.png' },
     { name: 'Village', icon: '/icons/Planting.png' },
-    { name: 'Farm', icon: '/icons/Barn.png' }, // Reusing Barn for Farm as an example
+    { name: 'Farm', icon: '/icons/Barn.png' },
     { name: 'Forest', icon: '/icons/Forest.png' },
     { name: 'Hiking', icon: '/icons/Hiking.png' },
   ];
+  const scrollRef = useRef(null);
+
+  const smoothScroll = (direction) => {
+    if (scrollRef.current) {
+      const { current } = scrollRef;
+      const scrollAmount = 150;
+      const start = current.scrollLeft;
+      const end = direction === 'left' ? start - scrollAmount : start + scrollAmount;
+      const duration = 300;
+      let startTime = null;
+
+      const animateScroll = (timestamp) => {
+        if (!startTime) startTime = timestamp;
+        const progress = timestamp - startTime;
+        const easeInOut = progress / duration < 0.5
+          ? 2 * (progress / duration) * (progress / duration)
+          : -1 + (4 - 2 * (progress / duration)) * (progress / duration);
+        current.scrollLeft = start + (end - start) * easeInOut;
+
+        if (progress < duration) {
+          requestAnimationFrame(animateScroll);
+        }
+      };
+
+      requestAnimationFrame(animateScroll);
+    }
+  };
 
   return (
-    <div className="flex items-center justify-between ">
-      {categories.map((category, index) => (
-        <div key={index} className="flex flex-col items-center ">
-          <Image
-            src={category.icon}
-            alt={category.name}
-            width={40}
-            height={40} // Adjusted height to match width for better proportion
-            className="mb-2"
-          />
-          <p className="text-md font-semibold">{category.name}</p>
-        </div>
-      ))}
-    <div className="flex items-center">
-      <button className="bg-white text-black px-4 py-2 rounded-full flex items-center border border-gray-400">
-        <Filter className="mr-2 h-4 w-4" /> {/* Matches the icon size in the image */}
-        Filters
-      </button>
-    </div>
+    <div className="flex items-center w-full ">
+      <div ref={scrollRef} className="flex space-x-6 overflow-x-auto scrollbar-hide flex-1">
+        {categories.map((category, index) => (
+          <div key={index} className="flex flex-col items-center min-w-[50px] cursor-pointer">
+            <Image
+              src={category.icon}
+              alt={category.name}
+              width={24}
+              height={24}
+              className="mb-2 object-contain"
+            />
+            <p className="text-xs font-medium text-center whitespace-nowrap text-gray-600">{category.name}</p>
+          </div>
+        ))}
+      </div>
+      
+      <div className="flex flex-col items-center min-w-[50px] cursor-pointer ml-4">
+        <Filter className="h-6 w-6 mb-2" />
+        <p className="text-xs font-medium text-center whitespace-nowrap text-gray-600 hidden sm:block">Filters</p>
+      </div>
     </div>
   );
 }
